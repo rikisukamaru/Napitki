@@ -27,6 +27,8 @@ namespace Nasled
             var list = new List<Gaz>();
             var gaz1 = new Gaz(1, "CocaCoca", 1500);
             var gaz2 = new Gaz(0.5, "Fanta", 1300);
+
+            return "";
         }
     }
 }
