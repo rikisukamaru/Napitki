@@ -25,7 +25,8 @@ namespace Nasled
         public override string getInfo()
         {
             var Sok = new List<Sok>();
-
+            var sok1 = new Sok("Апельсин", true, 0.6);
+            var sok2 = new Sok("Яблоко", false, 1);
 
         }
     }
