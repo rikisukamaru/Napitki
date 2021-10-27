@@ -19,8 +19,9 @@ namespace Nasled
             obiem = x;
         }
 
-       
+        public abstract string getInfo();
 
-    }
+
+     }
 
 }

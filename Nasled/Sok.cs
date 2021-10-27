@@ -28,6 +28,7 @@ namespace Nasled
             var sok1 = new Sok("Апельсин", true, 0.6);
             var sok2 = new Sok("Яблоко", false, 1);
 
+            return "";
         }
     }
 }

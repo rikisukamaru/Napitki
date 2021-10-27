@@ -26,7 +26,7 @@ namespace Nasled
             var list = new List<Alco>();
             var alco1 = new Alco(40.8,0.5,"Водка");
             var alco2 = new Alco(15, 0.7, "Вино");
-
+            return "";
         }
     }
 }
