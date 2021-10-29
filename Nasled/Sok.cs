@@ -22,13 +22,12 @@ namespace Nasled
             frukt = fr;
             myakoti = mya;
         }
-        public override string getInfo()
+        public override String getInfo()
         {
-            var Sok = new List<Sok>();
-            var sok1 = new Sok("Апельсин", true, 0.6);
-            var sok2 = new Sok("Яблоко", false, 1);
-
-            return "";
+            
+            var s = "Сок\n";
+            s += String.Format("Объем:\t{0}", this.obiem);
+            return s;
         }
     }
 }

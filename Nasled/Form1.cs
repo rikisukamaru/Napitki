@@ -20,6 +20,7 @@ namespace Nasled
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             richTextBox1.Clear();
             this.napitkiList.Clear();
             var rnd = new Random();
@@ -28,15 +29,25 @@ namespace Nasled
                 switch(rnd.Next() %3)
                 {
                     case 0:
-                        this.napitkiList.Add(new Alco());
+                        this.napitkiList.Add(new Alco
+                        {
+                            obiem = rnd.Next() % (1.5)
+                         }) ;
+                        
                         break;
                     case 1: 
-                        this.napitkiList.Add(new Sok());
+                        this.napitkiList.Add(new Sok
+                        {
+                            obiem = rnd.Next() % (2.0)
+                        });
                         break;
                     case 2: 
-                        this.napitkiList.Add(new Gaz());
+                        this.napitkiList.Add(new Gaz
+                        {
+                            obiem = rnd.Next() % (2.0)
+                        });
                         break;
-                        
+                       
                 }
                 
             }
@@ -66,10 +77,29 @@ namespace Nasled
 
                 }
             }
-            richTextBox1.Text += "Алког\tСок\tГазир";
+            richTextBox1.Text += "Алкоголь\tСок\tГазировка";
             richTextBox1.Text += "\n";
-            richTextBox1.Text += String.Format("{0}\t{1}\t{2}",sokCount,gazCount,alcoCount);
+            richTextBox1.Text += String.Format("{0}\t\t{1}\t\t{2}",sokCount,gazCount,alcoCount);
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+            if (this.napitkiList.Count == 0)
+            {
+                richTextBox2.Text = "Пусто UwU";
+                return;
+            }
+
             
+            var napitki = this.napitkiList[0];
+            this.napitkiList.RemoveAt(0);
+
+
+            richTextBox2.Text = napitki.getInfo();
+
+            ShowInfo();
         }
     }
 }

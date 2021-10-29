@@ -22,13 +22,13 @@ namespace Nasled
             puzirkov = puz;
         }
 
-        public override string getInfo()
+        public override String getInfo()
         {
-            var list = new List<Gaz>();
-            var gaz1 = new Gaz(1, "CocaCoca", 1500);
-            var gaz2 = new Gaz(0.5, "Fanta", 1300);
+           // var list = new List<Gaz>();
+            var st = "Газировка\n";
+            st += String.Format("Объем:\t{0}", this.obiem);
 
-            return "";
+            return st;
         }
     }
 }

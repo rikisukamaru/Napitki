@@ -7,7 +7,7 @@ namespace Nasled
 
     abstract class Napitki
     {
-        protected double obiem;
+        public double obiem;
 
         protected Napitki()
         {
@@ -19,7 +19,8 @@ namespace Nasled
             obiem = x;
         }
 
-        public abstract string getInfo();
+        public abstract String getInfo();
+       
 
 
      }

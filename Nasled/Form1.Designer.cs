@@ -38,10 +38,10 @@ namespace Nasled
             // richTextBox1
             // 
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 95);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 108);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(265, 62);
+            this.richTextBox1.Size = new System.Drawing.Size(277, 51);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.ReadOnlyChanged += new System.EventHandler(this.button1_Click);
@@ -50,7 +50,7 @@ namespace Nasled
             // 
             this.richTextBox2.Location = new System.Drawing.Point(12, 176);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(265, 166);
+            this.richTextBox2.Size = new System.Drawing.Size(277, 166);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
             // 
@@ -58,7 +58,7 @@ namespace Nasled
             // 
             this.button1.Location = new System.Drawing.Point(12, 372);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 57);
+            this.button1.Size = new System.Drawing.Size(127, 57);
             this.button1.TabIndex = 2;
             this.button1.Text = "Создать список";
             this.button1.UseVisualStyleBackColor = true;
@@ -68,10 +68,11 @@ namespace Nasled
             // 
             this.button2.Location = new System.Drawing.Point(158, 372);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 57);
+            this.button2.Size = new System.Drawing.Size(131, 57);
             this.button2.TabIndex = 3;
             this.button2.Text = "Достать товар";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
