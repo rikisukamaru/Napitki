@@ -7,11 +7,12 @@ namespace Nasled
 
     abstract class Napitki
     {
+        public static Random rnd = new Random();
         public double obiem;
 
         protected Napitki()
         {
-            obiem = 0;
+            obiem = 0.1;
         }
 
         protected Napitki(double x)
@@ -19,7 +20,13 @@ namespace Nasled
             obiem = x;
         }
 
-        public abstract String getInfo();
+        public virtual String GetInfo()
+        {
+            var str = String.Format("\nОбъем напитка: {0} л.", this.obiem);
+            return str;
+        }
+
+     
        
 
 

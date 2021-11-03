@@ -4,29 +4,44 @@ using System.Text;
 
 namespace Nasled
 {
+    public enum Type { Вино, Водка, Шампанское, Коньяк, Виски };
     class Alco : Napitki
     {
        private  double percent;
-        private string tip;
+       public Type tip = Type.Вино;
        public Alco()
         {
             percent = 0;
-            obiem = 0;
-            tip = "";
+            obiem = 0.1;
+            tip = Type.Вино;
         }
         public Alco(double q,double w, string s) : base()
         {
             percent = q;
             obiem = w;
-            tip = s;
+            tip = Type.Водка;
         }
-
-        public override String getInfo() 
+       
+        public override String GetInfo() 
         {
-            var str = "Водка\n";
-            str += String.Format("Объем:\t{0}",this.obiem);
-          
+            var str = "Раздел:\tАлкоголь";
+           
+            str += String.Format("\nТип алкоголя: {0} ", this.tip);
+            str += base.GetInfo();
+            str += String.Format("\nПроцент крепости: {0} ",this.percent);
+            
             return str;
+        }
+        public static Alco Generator() 
+        {
+            
+            return new Alco
+            {
+                obiem = 0.3 + rnd.Next() % (3.5), 
+                percent = 5 + rnd.Next() % 40, 
+                tip = (Type)rnd.Next(4)
+            };
+
         }
     }
 }

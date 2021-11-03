@@ -29,23 +29,13 @@ namespace Nasled
                 switch(rnd.Next() %3)
                 {
                     case 0:
-                        this.napitkiList.Add(new Alco
-                        {
-                            obiem = rnd.Next() % (1.5)
-                         }) ;
-                        
+                        this.napitkiList.Add(Alco.Generator());
                         break;
                     case 1: 
-                        this.napitkiList.Add(new Sok
-                        {
-                            obiem = rnd.Next() % (2.0)
-                        });
+                        this.napitkiList.Add(Sok.Generator());
                         break;
                     case 2: 
-                        this.napitkiList.Add(new Gaz
-                        {
-                            obiem = rnd.Next() % (2.0)
-                        });
+                        this.napitkiList.Add(Gaz.Generator());
                         break;
                        
                 }
@@ -64,28 +54,32 @@ namespace Nasled
                 if(napitki is Alco)
                 {
                     alcoCount+= 1;
+                    richTextBox3.Text += "Алкоголь\n";
                    
                 }
                 else if(napitki is Sok)
                 {
                     sokCount += 1;
+                    richTextBox3.Text += "Сок\n";
 
                 }
                 else if (napitki is Gaz)
                 {
                     gazCount += 1;
+                    richTextBox3.Text += "Газировка\n";
 
                 }
             }
             richTextBox1.Text += "Алкоголь\tСок\tГазировка";
             richTextBox1.Text += "\n";
-            richTextBox1.Text += String.Format("{0}\t\t{1}\t\t{2}",sokCount,gazCount,alcoCount);
+            richTextBox1.Text += String.Format("{0}\t\t{1}\t\t{2}",alcoCount, sokCount, gazCount);
            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
+            richTextBox3.Clear();
             if (this.napitkiList.Count == 0)
             {
                 richTextBox2.Text = "Пусто UwU";
@@ -97,7 +91,7 @@ namespace Nasled
             this.napitkiList.RemoveAt(0);
 
 
-            richTextBox2.Text = napitki.getInfo();
+            richTextBox2.Text = napitki.GetInfo();
 
             ShowInfo();
         }

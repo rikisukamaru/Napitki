@@ -4,31 +4,43 @@ using System.Text;
 
 namespace Nasled
 {
+    public enum gz {SoSaSoSa, FantaЗёр, БонАква, Кайфарик };
     class Gaz : Napitki
     {
-        private string nameGaz;
+        public gz nameGaz = gz.FantaЗёр;
         private int puzirkov;
 
         public Gaz() : base()
         {
-            obiem = 0;
-            nameGaz = "";
+            obiem = 0.1;
+            nameGaz = gz.SoSaSoSa;
             puzirkov = 0;
         }
-        public Gaz(double ob, string ng,int puz) : base()
+        public Gaz(double ob, gz ng,int puz) : base()
         {
             obiem = ob;
             nameGaz = ng;
             puzirkov = puz;
         }
 
-        public override String getInfo()
+        public override String GetInfo()
         {
-           // var list = new List<Gaz>();
-            var st = "Газировка\n";
-            st += String.Format("Объем:\t{0}", this.obiem);
+           
+            var str = "Раздел:\tГазировка";
+            str += String.Format("\nМарка газировки: {0} ", this.nameGaz);
+            str += base.GetInfo();
+            str += String.Format("\nКол-во пузырьков: {0} ", this.puzirkov);
+            return str;
+        }
+        public static Gaz Generator()
+        {
+            return new Gaz
+            {
+                obiem = 0.1 + rnd.Next() % (3.5),
+                puzirkov = 1000 + rnd.Next() % 3500,
+                nameGaz = (gz)rnd.Next(3)
+            };
 
-            return st;
         }
     }
 }
