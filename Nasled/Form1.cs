@@ -24,7 +24,7 @@ namespace Nasled
             richTextBox1.Clear();
             this.napitkiList.Clear();
             var rnd = new Random();
-            for (var i = 0; i < 10; ++i)
+            for (var i = 0; i < 20; ++i)
             {
                 switch(rnd.Next() %3)
                 {
@@ -94,6 +94,21 @@ namespace Nasled
             richTextBox2.Text = napitki.GetInfo();
 
             ShowInfo();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            
+        }
+
+        private void условиеЗадачиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Придумать иерархию классов.\nДолжен быть 1 базовый класс, и 3 класса наследника.У базового класса должно быть, как минимум одно свойство передающиеся по наследству остальным, у каждого из классов наследников должно быть как минимум два уникальных свойства.\nРеализовать эмулятор торгового автомата по образу и подобию как описано тут\nЕсли вы обычно делаете желтые задачки, то в эмуляторе надо реализовать отображение состояния очереди(чтобы было видно какие объекты в каком порядке сейчас находятся в автомате)\nЕсли чувствуете склонность к красным, добавьте картинки для каждого типа объектов, которые будут видны при выводе очереди");
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Автор: Тимур Рикимару\nВерсия: 0.1");
         }
     }
 }
