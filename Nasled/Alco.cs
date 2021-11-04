@@ -34,7 +34,15 @@ namespace Nasled
         }
         public static Alco Generator() 
         {
-            
+          //  Type type = new Type();
+          //  Alco a = new Alco();
+            //a.tip = (Type)rnd.Next(4);
+
+
+          //  if (a.tip == Type.Вино)
+          //  {
+
+          //  }
             return new Alco
             {
                 obiem = 0.3 + rnd.Next() % (3.5), 

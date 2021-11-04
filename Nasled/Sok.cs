@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Nasled
 {
-    public enum Frukt { Яблочный, Мультифрукт, Апельсиновый, Вишневый};
+    public enum Frukt { Яблоко, Мультифрукт, Апельсин, Вишня};
     class Sok : Napitki
     {
-        public Frukt frukt = Frukt.Апельсиновый;
+        public Frukt frukt = Frukt.Апельсин;
         private bool myakoti;
 
         public Sok()
