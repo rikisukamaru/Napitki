@@ -5,10 +5,12 @@ using System.Text;
 namespace Nasled
 {
     public enum Type { Вино, Водка, Шампанское, Коньяк, Виски };
+    public enum Numb : Int32 {_023334121,_324167254,_47898222,_58732425,_4662341334,_6523457};
     class Alco : Napitki
     {
        private  double percent;
        public Type tip = Type.Вино;
+        public Numb kod = Numb._324167254;
        public Alco()
         {
             percent = 0;
@@ -29,6 +31,7 @@ namespace Nasled
             str += String.Format("\nТип алкоголя: {0} ", this.tip);
             str += base.GetInfo();
             str += String.Format("\nПроцент крепости: {0} ",this.percent);
+            str += String.Format("\nАкциз: {0}", this.kod);
             
             return str;
         }
@@ -47,7 +50,9 @@ namespace Nasled
             {
                 obiem = 0.3 + rnd.Next() % (3.5), 
                 percent = 5 + rnd.Next() % 40, 
-                tip = (Type)rnd.Next(4)
+                tip = (Type)rnd.Next(4),
+                kod = (Numb)rnd.Next(6)
+
             };
 
         }
